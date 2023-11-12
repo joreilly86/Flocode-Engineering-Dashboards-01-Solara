@@ -1,2 +1,13 @@
-# Flocode-Engineering-Dashboards---Solara
-A Solara-based Python application for calculating concrete slab weight. It features interactive inputs for slab dimensions and density, with real-time calculation updates. Demonstrates Solara's reactive state management and user interface capabilities, useful for engineering applications.
+# Concrete Slab Weight Calculator using Solara 🏗️
+
+A simple, illustrative Python application showcasing Solara's dashboard capabilities. This project, while functional, serves primarily as a learning tool and is not intended for serious engineering use. 🚀
+
+## Features
+- Interactive UI for slab measurements. 📐
+- Dynamic updates with Solara's reactive state management. 🌐
+
+## Further Learning
+- For an in-depth exploration, visit my [Flocode Substack newsletter](https://flocode.substack.com). 📘
+- Check out [Flocode.dev](https://flocode.dev) for more coding resources for engineers. 💡
+
+*Note: This project is an example and should not replace professional engineering tools.* 🛠️🚧
