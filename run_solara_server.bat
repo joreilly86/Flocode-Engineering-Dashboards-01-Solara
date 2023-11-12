@@ -1,0 +1,1 @@
+solara run my_dashboard.py
