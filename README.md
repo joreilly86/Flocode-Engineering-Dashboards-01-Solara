@@ -1,4 +1,4 @@
-# Concrete Slab Weight Calculator using Solara 🏗️
+# Concrete Slab Weight Calculator using Solara ☀️
 
 A simple, illustrative Python application showcasing [Solara's](https://solara.dev) dashboard capabilities. This project, while functional, serves primarily as a learning tool and is not intended for serious engineering use. 🚀
 
