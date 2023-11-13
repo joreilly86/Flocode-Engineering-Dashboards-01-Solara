@@ -11,3 +11,24 @@ A simple, illustrative Python application showcasing [Solara's](https://solara.d
 - Check out [Flocode.dev](https://flocode.dev) for more coding resources for engineers. 💡
 
 *Note: This project is an example and should not replace professional engineering tools.* 🛠️🚧
+
+## Installation and Running the Application
+
+### Dependencies Installation
+To install the necessary dependencies, run the following command in your terminal:
+
+```
+pip install -r requirements.txt
+```
+
+This command will install all the packages listed in the requirements.txt file, ensuring your application has all it needs to run properly.
+
+### Starting the Solara Server
+Once you have dependencies installed, to start the Solara server and run the application, use:
+```
+solara run my_dashboard.py
+```
+
+This command will start a local server, typically accessible via a web browser at http://localhost:8765. Open this URL to interact with the application.
+
+
