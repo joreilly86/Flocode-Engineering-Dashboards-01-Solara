@@ -12,7 +12,8 @@ def Page():
 
     def update_calculation():
         weight = length * width * slab_depth * density
-        set_calculation_result(f"The calculated weight is: {weight:.2f} kg")
+        volume = length * width * slab_depth
+        set_calculation_result(f"The calculated weight is:<br> **{weight:.1f} kg ({(weight*0.00981):.1f} kN)**")
 
     with solara.Column():
         solara.Title("Flocode - Engineering Dashboards | 01. Solara - The Basics")
@@ -23,26 +24,27 @@ def Page():
             solara.Image(image_path, width="400px")  # Set the desired width
             display("This is just an image")
             solara.Markdown(r'''
-            ## Sidebar Title Goes Here
+            ## Slab Depth Slider
+            Adjust the slab depth using the slider below.
+            ''')
+            solara.SliderFloat(label="Slab Depth (meters)", min=0, max=1.0, step=0.1, value=slab_depth, on_value=set_slab_depth)
+
+
+            solara.Markdown(r'''
+            ## Sidebar Stuff Goes Here
                             
             ### 🔭 Explore Further
 
-            * *You can add markdown text to describe something.*
+            - *You can add markdown text to describe something.*
             - Maybe even a list of **important things**.
             - Or a link to [flocode.dev](https://flocode.dev)
             - Or a table of contents for your dashboard documentation. 
 
-            📘 For more information, check out the [Solara Documentation](https://solara.dev).
+            📘 For more information on Solara, check out the [Solara Documentation](https://solara.dev).
 
             🐍 And for learning more Python for engineering stuff, come and visit us at [flocode.dev](https://flocode.dev) 🌊.
                             
-            ## Slab Depth Slider
-            Adjust the slab depth using the slider below.
-
             ''')
-
-
-            solara.SliderFloat(label="Slab Depth (meters)", min=0, max=1.0, step=0.1, value=slab_depth, on_value=set_slab_depth)
 
         solara.Info("Welcome to Flocode's Solara Dashboard Example")
 
@@ -50,16 +52,18 @@ def Page():
         with solara.Card():
             solara.Markdown(r'''
                 # Concrete Slab Weight Calculator
-
-                This simple tool, featured in the [Flocode Newsletter's](https://flocode.substack.com) post "Engineering Dashboards | 01. Solara - The Basics," demonstrates how to use Solara for creating dashboards. It calculates the weight of a concrete slab based on input dimensions and density.
-
+                This simple tool, featured in [Flocode Newsletter's](https://flocode.substack.com) post **"Engineering Dashboards | 01. Solara - The Basics,"** demonstrates how to use Solara for creating dashboards.  
+                
                 ## How to Use
+                To use the calculator, adjust the following inputs in the fields below:
+
                 - **Length (meters):** Enter the slab's length.
                 - **Width (meters):** Specify the slab's width.
                 - **Slab Depth (meters):** Adjust using the sidebar slider.
                 - **Density (kg/m³):** Select from the dropdown (commonly around 2400 kg/m³).
 
-                The calculator dynamically displays the weight as inputs change. Explore more at [Flocode's Newsletter](https://flocode.substack.com).
+                The calculator dynamically displays the weight as inputs change.  
+                Explore more Python for Engineering by subscribing to our newsletter [Flocode: Engineering Insights 🌊](https://flocode.substack.com).
             ''')
 
         with solara.Card("Slab Weight Calculator"):
@@ -68,7 +72,7 @@ def Page():
             solara.Select(label="Density (kg/m³)", values=density_options, value=density, on_value=set_density)
             solara.Markdown(calculation_result)
             solara.Markdown(r'''
-                            **The columns and cards below are just for Solara demonstration purposes. They are not part of the calculator.**
+                            ### The columns and cards below are for Solara UI layout demonstration purposes. They are not part of the calculator.
                             ''')
 
         # Automatically update the calculation whenever any input changes
@@ -76,7 +80,7 @@ def Page():
 
         
         # This is just some random formatting to show how to use the Columns component
-        with solara.Card("Use solara.Columns([1, 2]) to create relatively sized columns"):
+        with solara.Card("Use solara.Columns([1, 2]) to create relatively sized columns, you can add whatever you want to them"):
             with solara.Columns([1, 2]):
                 solara.Success("I'm in the first column")
                 solara.Warning("I'm in the second column, I am twice as wide")
