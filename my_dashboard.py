@@ -1,6 +1,12 @@
 import solara
 from pathlib import Path
 
+# Remember to run the dashboard with the following command:
+# solara run my_dashboard.py
+# Then open the dashboard in your browser at http://localhost:8765
+
+# If you run this in a docker container, you can access the dashboard at http://localhost:4000 
+
 @solara.component
 def Page():
     length, set_length = solara.use_state(1.0)
