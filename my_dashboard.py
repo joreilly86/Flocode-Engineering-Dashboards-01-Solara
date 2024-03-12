@@ -26,7 +26,7 @@ def Page():
 
         with solara.Sidebar():
             # Add an image to the dashboard
-            image_path = Path(__file__).parent / "website thumbnail.png"
+            image_path = Path(__file__).parent / "KP_logo.png"
             solara.Image(image_path, width="400px")  # Set the desired width
             display("This is just an image")
             solara.Markdown(r'''
